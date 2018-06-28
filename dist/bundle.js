@@ -83,7 +83,7 @@ var PluginParameters =
 ];
 
 function recalculate() {
-	Trace(selection.root);
+	// Trace(selection.root);
 	var part1 = PluginParameters[1].data[selection.part1].offsets;
 	var mid = PluginParameters[2].data[selection.mid].offsets;
 	var part2 = PluginParameters[3].data[selection.part2].offsets;
@@ -95,7 +95,7 @@ function getScale() {
 }
 
 function ParameterChanged(param, value) {
-	Trace(param + ", " + value); // print the value to the console
+	// Trace(param + ", " + value); // print the value to the console
 	switch(param) {
 		case 0:
 			selection.root = value;
@@ -130,9 +130,9 @@ function HandleMIDI(event) {
     }
 }
 
-// Dont copy the following two lines
-console.log(
-    PluginParameters,
-    ParameterChanged
-);
-HandleMIDI(null);
+
+// Need this so that Rollup will do its tree shake and include the code
+// try catch block will get ignored in Logic 
+try {
+    consloe.log(PluginParameters, ParameterChanged, HandleMIDI);
+} catch (e) {}

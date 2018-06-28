@@ -15,9 +15,9 @@ function HandleMIDI(event) {
     }
 }
 
-// Dont copy the following two lines
-console.log(
-    PluginParameters,
-    ParameterChanged
-);
-HandleMIDI(null);
+
+// Need this so that Rollup will do its tree shake and include the code
+// try catch block will get ignored in Logic 
+try {
+    consloe.log(PluginParameters, ParameterChanged, HandleMIDI);
+} catch (e) {}
