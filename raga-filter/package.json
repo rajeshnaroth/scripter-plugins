@@ -1,0 +1,32 @@
+{
+  "name": "raga-filter",
+  "version": "1.0.0",
+  "description": "A filter to convert any scale to one of the carnatic mela kartha ragas",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "rollup src/index.js --file dist/bundle.js --format cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajeshnaroth/raga-filter.git"
+  },
+  "keywords": [
+    "logic",
+    "pro",
+    "x",
+    "scripter",
+    "plugin",
+    "raga",
+    "filter"
+  ],
+  "author": "Rajesh Naroth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajeshnaroth/raga-filter/issues"
+  },
+  "homepage": "https://github.com/rajeshnaroth/raga-filter#readme",
+  "dependencies": {
+    "ramda": "^0.25.0"
+  }
+}
