@@ -25,7 +25,6 @@ const scaleMid = [
 
 const rootNote = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
-
 var selection = {
 	root: 0,
 	part1: 0,
@@ -126,8 +125,8 @@ function HandleMIDI(event) {
         event.pitch = pitch + offsets[noteNum];
         // Trace(root, event.pitch);
         // Trace(event.pitch);
-        event.send();
     }
+    event.send();
 }
 
 
