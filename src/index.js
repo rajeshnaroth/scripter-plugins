@@ -1,17 +1,17 @@
 import { PluginParameters, ParameterChanged, getScale } from "./parameters"
 
 function HandleMIDI(event) {
-    Trace(getScale().offsets);
-    Trace(getScale().root);
     var offsets = getScale().offsets;
     var root = getScale().root;
+
     // if it's a note 
     if (event instanceof Note) { 
         var pitch = event.pitch;
-        offsets.forEach((offset, i) => {
-            event.pitch = pitch + offset - root; 
-            event.sendAfterMilliseconds(i * 300); // send after delay
-        });
+        var noteNum = (pitch % 12 - root + 12) % 12;
+        event.pitch = pitch + offsets[noteNum];
+        // Trace(root, event.pitch);
+        // Trace(event.pitch);
+        event.send();
     }
 }
 

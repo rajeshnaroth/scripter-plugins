@@ -1,24 +1,24 @@
 const scaleNorth = [
-	{ name: "RI GA __ __", offsets: [1, 2] },
-	{ name: "RI __ GA __", offsets: [1, 3] },
-	{ name: "RI __ __ GA", offsets: [1, 4] },
-	{ name: "__ RI GA __", offsets: [2, 3] },
-	{ name: "__ RI __ GA", offsets: [2, 4] },
-	{ name: "__ __ RI GA", offsets: [3, 4] }
+	{ name: "RI GA __ __", offsets: [0, 0, -1, -2] },
+	{ name: "RI __ GA __", offsets: [0, -1, 0, -1] },
+	{ name: "RI __ __ GA", offsets: [0, -1, 1, 0] },
+	{ name: "__ RI GA __", offsets: [1, 0, 0, -1] },
+	{ name: "__ RI __ GA", offsets: [1, 0, 1, 0] },
+	{ name: "__ __ RI GA", offsets: [2, 1, 0, 0] }
 ];
 
 const scaleSouth = [
-	{ name: "DA NI __ __", offsets: [8, 9] },
-	{ name: "DA __ NI __", offsets: [8, 10] },
-	{ name: "DA __ __ NI", offsets: [8, 11] },
-	{ name: "__ DA NI __", offsets: [9, 10] },
-	{ name: "__ DA __ NI", offsets: [9, 11] },
-	{ name: "__ __ DA NI", offsets: [10, 11] }
+	{ name: "DA NI __ __", offsets: [0, 0, -1, -2] },
+	{ name: "DA __ NI __", offsets: [0, -1, 0, -1] },
+	{ name: "DA __ __ NI", offsets: [0, -1, 1, 0] },
+	{ name: "__ DA NI __", offsets: [1, 0, 0, -1] },
+	{ name: "__ DA __ NI", offsets: [1, 0, 1, 0] },
+	{ name: "__ __ DA NI", offsets: [2, 1, 0, 0] }
 ];
 
 const scaleMid = [
-	{ name: "MA __", offsets: [5] },
-	{ name: "__ MA", offsets: [6] }
+	{ name: "MA __", offsets: [0, -1] },
+	{ name: "__ MA", offsets: [1, 0] }
 ];
 
 const rootNote = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
@@ -85,7 +85,7 @@ function recalculate() {
 	var part1 = PluginParameters[1].data[selection.part1].offsets;
 	var mid = PluginParameters[2].data[selection.mid].offsets;
 	var part2 = PluginParameters[3].data[selection.part2].offsets;
-	selection.offsets = [0].concat(part1, mid, [7], part2, [12]);
+	selection.offsets = [0].concat(part1, mid, [0], part2);
 }
 
 function getScale() {
